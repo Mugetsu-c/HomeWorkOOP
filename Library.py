@@ -31,11 +31,24 @@ class Book:
         self.__pages = pages
 
     def __repr__(self) -> str:
+        """
+        Return a string representation of the Book object.
+
+        The string representation includes the title, author, and publication year of the book.
+
+        Parameters:
+        None
+
+        Returns:
+        str: A string representation of the Book object in the format:
+            "Book(title='{self.title}', author='{self.author}', year={self.publication_year})"
+        """
         return(
             f"""Book(title='{self.title}', 
             author='{self.author}', 
-            year={self.publication_year}) \n"""
+            year={self.publication_year})"""
         )
+
 
     @property
     def title(self) -> str:
@@ -104,9 +117,7 @@ class Book:
         self.__author = value
 
     @property
-    def publication_year(
-        self
-        ) -> int:
+    def publication_year(self) -> int:
         """
         Get the publication year of the book.
 
@@ -116,10 +127,7 @@ class Book:
         return self.__publication_year
 
     @publication_year.setter
-    def publication_year(
-        self,
-        value: int
-        ) -> None:
+    def publication_year(self,value: int) -> None:
         """
         Set the publication year of the book.
 

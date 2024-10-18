@@ -90,12 +90,17 @@ class Designer(Employee):
         """
         return self._salary * 0.10
 
-# Пример использования
-employees = [
-    Manager("Иван", "Иванов", "Менеджер", 100000),
-    Developer("Петр", "Петров", "Разработчик", 80000),
-    Designer("Анна", "Смирнова", "Дизайнер", 70000)
-]
+def main():
+    # Пример использования
+    employees = [
+        Manager("Иван", "Иванов", "Менеджер", 100000),
+        Developer("Петр", "Петров", "Разработчик", 80000),
+        Designer("Анна", "Смирнова", "Дизайнер", 70000)
+    ]
 
-for employee in employees:
-    print(employee.get_bonus())
+    for employee in employees:
+        print(employee.get_bonus())
+        
+if __name__ == '__main__':
+    main()
+    
