@@ -43,12 +43,7 @@ class Book:
         str: A string representation of the Book object in the format:
             "Book(title='{self.title}', author='{self.author}', year={self.publication_year})"
         """
-        return(
-            f"""Book(title='{self.title}', 
-            author='{self.author}', 
-            year={self.publication_year})"""
-        )
-
+        return(f"Book(title='{self.title}', author='{self.author}', year={self.publication_year})")
 
     @property
     def title(self) -> str:
@@ -156,7 +151,7 @@ class Library:
         self.__books: List[Book] = []
 
     def __repr__(self):
-        return f"Library({self.__books})"
+        return f"Library with {(self.__books)} books"
 
     def add_book(self, book: Book) -> None:
         """
@@ -195,7 +190,7 @@ class Library:
         """
         for book in self.__books:
             if book.title == title:
-                return book.title
+                return book
         return None
 
     def get_books_by_author(self, author: str) -> List[Book]:
@@ -210,7 +205,7 @@ class Library:
         """
         return [book for book in self.__books if book.author == author]
 
-    def get_books_sorted_by_year(self) -> None:
+    def get_books_sorted_by_year(self) -> List[Book]:
         """
         Get all books sorted by their publication year.
 
@@ -228,11 +223,15 @@ def main():
     library = Library()
     book1 = Book("Название1", "Автор1", 2001, "Жанр1", 300)
     book2 = Book("Название2", "Автор2", 1999, "Жанр2", 150)
+    book3 = Book("Название3", "Автор2", 2000, "Жанр2", 100)
     library.add_book(book1)
     library.add_book(book2)
-    print(library.search_by_title("Название1"))
-    print(library.get_books_by_author("Автор1"))
+    library.add_book(book3)
+    print(library)
+    # print(library.search_by_title("Название1"))
+    # print(library.get_books_by_author("Автор1"))
     print(library.get_books_sorted_by_year())
+    print(library)
 
 if __name__ == '__main__':
     main()
